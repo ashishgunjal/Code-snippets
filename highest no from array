@@ -1,0 +1,11 @@
+// highest no from array
+
+var a = [1,2,3,6,7,10,56]
+let no = -1
+for(let i=0 ; i<a.length;i++){
+  if(a[i] > no){
+    no = a[i]
+  }
+}
+
+console.log(no)
