@@ -1,0 +1,21 @@
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const resultArr = [arr1, arr2];
+console.log(resultArr); // [[1, 2, 3], [4, 5, 6]]
+
+// typeof 
+console.log(typeof typeof 5); // string
+
+// typeof 
+console.log(1+4+'4'); //54
+
+console.log('4'+1+4); //414
+
+// array.reduce method
+var array = [1,2,3,4,5]
+
+var result = a.reduce((sum,x)=>{
+console.log(sum-x)
+},0)
+
+console.log(result)// -15
