@@ -1,0 +1,24 @@
+call apply and bind js -
+
+var callFunction = function(city,state){
+  return this.fname + " "+this.lname + " "+city+" "+state
+}
+
+var refObject = {
+  fname:"Ashish",
+  lname:"Gunjal"
+}
+
+console.log(callFunction.call(refObject,"Pune","MH"))
+
+console.log(callFunction.apply(refObject,["Chennai","TN"]))
+
+var fn = callFunction.bind(refObject,"Cochin","KL")
+
+console.log(fn())
+
+call - call is method is used to invoke a function directly by passing reference which points this keyword inside function 
+and with object we can pass multiple arguments
+apply - call is method is used to invoke a function directly by passing reference which points this keyword inside function 
+and with object we can pass array argument
+bind - Bind does not directly invoke the function or we can say it can create a copy of function that we can use to invoke later
