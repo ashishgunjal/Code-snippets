@@ -1,0 +1,49 @@
+//Create Object
+
+let obj1= {}
+console.log(obj1)
+
+let obj2 = new Object()
+console.log(obj2)
+
+let sampleObj ={
+  "name":"Ashish"
+}
+
+let obj3 = Object.create(sampleObj)
+console.log(obj3)
+
+//Create Array
+
+let array1 =[]
+console.log(array1)
+
+const array2 = new Array("1")
+console.log(array2)
+
+// Object destructing
+
+const objData = {"name":"Ashish",
+                "address":"Pune",
+                "comm":{
+                  "area":{
+                    "city":"Pune",
+                    "state":"MH",
+                    "country":"IN"
+                  },
+                  "mobNo":"9999999999",
+                }}
+const {name,address,comm:{mobNo,area:{city}}} = objData
+console.log(name,address,mobNo,city)
+                
+
+// Array Destructing
+
+const array = [1,2,3,[4,5,6,7,8]]
+
+const [no1,no2,no3,no4] = array
+console.log(no1,no2,no4[2])
+
+
+
+
