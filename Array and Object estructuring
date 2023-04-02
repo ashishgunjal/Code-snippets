@@ -1,12 +1,12 @@
 //Create Object
 
-let obj1= {}
+let obj1 = {}
 console.log(obj1)
 
 let obj2 = new Object()
 console.log(obj2)
 
-let sampleObj ={
+let sampleObj = {
   "name":"Ashish"
 }
 
@@ -15,7 +15,7 @@ console.log(obj3)
 
 //Create Array
 
-let array1 =[]
+let array1 = []
 console.log(array1)
 
 const array2 = new Array("1")
