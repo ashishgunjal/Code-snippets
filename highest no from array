@@ -1,11 +1,22 @@
-// highest no from array
+var array = [95,34,5,7,96,37,55,56,88]
 
-var a = [1,2,3,6,7,10,56]
-let no = -1
-for(let i=0 ; i<a.length;i++){
-  if(a[i] > no){
-    no = a[i]
-  }
+var someNo = -999
+var  someNo2 = -999
+var  someNo3 = -999
+
+for(let i = 0 ; i < array.length ; i++){
+  
+   if(array[i] > someNo){
+     someNo2 = someNo
+     someNo = array[i]
+   }else if(array[i] > someNo2){
+     someNo3 = someNo2
+     someNo2 = array[i]
+   }else if(someNo3 < someNo2){
+     someNo3= array[i]
+   }
+
 }
-
-console.log(no)// 56
+  console.log(someNo)// highest
+  console.log(someNo2)// second highest
+  console.log(someNo3)// third highest
