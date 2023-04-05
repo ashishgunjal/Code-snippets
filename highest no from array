@@ -1,8 +1,8 @@
 var array = [95,34,5,7,96,37,55,56,88]
 
-var someNo = -999
-var  someNo2 = -999
-var  someNo3 = -999
+var someNo = -11
+var  someNo2 = -11
+var  someNo3 = -11
 
 for(let i = 0 ; i < array.length ; i++){
   
