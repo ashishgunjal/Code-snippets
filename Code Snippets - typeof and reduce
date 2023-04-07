@@ -6,6 +6,8 @@ console.log(resultArr); // [[1, 2, 3], [4, 5, 6]]
 // typeof 
 console.log(typeof typeof 5); // string
 
+console.log(typeof null) // object
+
 // typeof 
 console.log(1+4+'4'); //54
 
