@@ -1,6 +1,6 @@
 // Callback function, passed as a parameter in the higher order function
 function callbackFunction(){
-    console.log('I am  a callback function');
+    console.log('I am  a callback function')
 }
 
 // higher order function
