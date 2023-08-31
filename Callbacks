@@ -1,0 +1,11 @@
+Callback - Callback is function passed as a argument to another function
+
+const sum = (a,b) =>{
+return a + b
+}
+
+const functionA = (a,b,sum)=>{
+sum(a,b)
+}
+
+functionA(1,2,sum)
