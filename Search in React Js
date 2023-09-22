@@ -1,0 +1,63 @@
+import { useEffect, useState } from "react";
+import "./styles.css";
+const dataArray = [
+  { name: "Rajat Pillai", phone: 11111111111, email: "rajat@gmail.com" },
+  { name: "Suresh Nair", phone: 111112222222, email: "suresh@gmail.com" },
+  { name: "Vivek", phone: 1111111333333, email: "vivek@rocket.com" },
+  { name: "Neeraj", phone: 111111444444, email: "neeraj@test.com" },
+  { name: "Anil", phone: 111111555555, email: "anil@yopmail.com" }
+];
+export default function App() {
+  const [text, setText] = useState("");
+  const [arrayData, setArrayData] = useState([]);
+
+  useEffect(() => {
+    setArrayData(dataArray);
+  }, []);
+
+  const onChangeText = (text) => {
+    console.log(text);
+    setText(text);
+    var array = [];
+    dataArray.map((item, index) => {
+      if (item.name.includes(text) || item.email.includes(text)) {
+        array.push(item);
+      }
+    });
+    setArrayData(array);
+  };
+
+  return (
+    <div className="App">
+      <input
+        value={text}
+        onChange={(e) => {
+          onChangeText(e.target.value);
+        }}
+        style={{ borderWidth: 1, padding: 6 }}
+      />
+      {arrayData.map((item, index) => {
+        return (
+          <div style={{ display: "flex", flexDirection: "column", margin: 12 }}>
+            <text>Name : {item.name}</text>
+            <text>Email : {item.email}</text>
+            <text>Phone : {item.phone}</text>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// const Child = () => {
+//   useEffect(() => {
+//     return () => {
+//       console.log("unmount");
+//     };
+//   }, []);
+//   return (
+//     <div>
+//       <text>child</text>
+//     </div>
+//   );
+// };
