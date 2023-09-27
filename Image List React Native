@@ -1,0 +1,39 @@
+import React, { Component } from 'react';
+import { View,Text,FlatList,Image} from 'react-native';
+const data = [
+  { name: 'code', image: 'https://unsplash.it/400/400?image=1' },
+  { name: 'responsable', image: 'https://unsplash.it/400/400?image=2' },
+  { name: 'piezas', image: 'https://unsplash.it/400/400?image=3' },
+  { name: 'peso', image: 'https://unsplash.it/400/400?image=4'},
+  { name: 'inicio', image: 'https://unsplash.it/400/400?image=5'},
+];
+
+const App =()=>{
+return(
+  <View>
+  <FlatList
+  data={data}
+  renderItem={(itemData,indexData)=>{
+    const {item} =  itemData
+    return(
+      <View style={{flexDirection:'row',alignItems:'center'}}>
+      <Image source={ {uri:item.image}} style={{
+        backgroundColor:'red',
+        height:60,width:60
+      }} />
+      <Text style={{textAlign:'center'}}>{item.name}</Text>
+      </View>
+    )
+  }}
+  />
+  </View>
+)
+}
+
+export default App
+
+
+
+
+
+
