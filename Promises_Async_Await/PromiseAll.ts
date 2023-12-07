@@ -7,17 +7,17 @@ const promise3 = new Promise((resolve, reject) => {
 Promise.all([promise1, promise2, promise3]).then((values) => {
     console.log(values);
 });
-// Expected output: Array [3, 42, "foo"]
+//Expected output: Array[3, 42, "foo"]
 
 
 
 const _promise1 = Promise.reject(3);
 const _promise2 = 42;
 const _promise3 = new Promise((resolve, reject) => {
-    setTimeout(reject, 100, 'foo');
+    setTimeout(resolve, 100, 'foo');
 });
 
-Promise.all([_promise1, _promise2, _promise3]).then((values) => {
+Promise.all([_promise1, _promise3]).then((values) => {
     console.log(values);
 }).catch(error => console.log(error));
-// Expected output: Array [3, 42, "foo"]
+// Expected output: 3
