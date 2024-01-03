@@ -1,4 +1,4 @@
-const oldObject = {
+const object = {
     "alfa": "1",
     "beta": "2",
     "gamma": {
@@ -14,35 +14,33 @@ const oldObject = {
     }
 }
 
-function flattenObject(oldObject) {
-    const newObject = {};
 
-    flattenHelper(oldObject, newObject, '');
-
-    return newObject;
-
-    function flattenHelper(currentObject, newObject, previousKeyName) {
-        for (let key in currentObject) {
-            let value = currentObject[key];
-            if (value.constructor !== Object) {
-                if (previousKeyName == null || previousKeyName == '') {
-                    newObject[key] = value;
-                } else {
-                    if (key == null || key == '') {
-                        newObject[previousKeyName] = value;
-                    } else {
-                        newObject[previousKeyName + '.' + key] = value;
-                    }
-                }
-            } else {
-                if (previousKeyName == null || previousKeyName == '') {
-                    flattenHelper(value, newObject, key);
-                } else {
-                    flattenHelper(value, newObject, previousKeyName + '.' + key);
-                }
+const flattenObject = (object) => {
+    let resultObj = {}
+    for (const i in object) {
+        if ((typeof object[i]) === 'object') {
+            const temp = flattenObject(object[i]);
+            for (const j in temp) {
+                resultObj[i + '.' + j] = temp[j];
             }
+        } else {
+
+            resultObj[i] = object[i]
+
         }
     }
+    return resultObj
 }
 
-console.log(flattenObject(oldObject))
+console.log(flattenObject(object))
+
+// [object Object] {
+//     alfa: "1",
+//     beta: "2",
+//     gamma.A: "1",
+//     gamma.B.X: "5",
+//     gamma.B.Y.P: "1",
+//     gamma.B.Y.Q: "2",
+//     gamma.delta.0: 1,
+//     gamma.delta.1: 2
+//   }
