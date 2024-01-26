@@ -6,7 +6,6 @@ for (let i = 0; i <= 10; i++) {
     if (!givenArray.includes(i)) {
         resultArray.push(i)
     }
-
 }
 
 console.log(resultArray)
