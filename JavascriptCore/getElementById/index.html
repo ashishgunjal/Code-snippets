@@ -2,14 +2,14 @@
   <head> </head>
   <body>
     <div style="">
-      <h1>Header 1</h1>
+      <h1 id="h1">Header 1</h1>
       <button id="btn">click1</button>
     </div>
   </body>
 
   <script>
     function onClick() {
-      alert("test5653423434234");
+      document.getElementById("h1").innerHTML = "H2";
     }
 
     const btn = document.getElementById("btn");
