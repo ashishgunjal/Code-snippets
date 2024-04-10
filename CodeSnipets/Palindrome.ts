@@ -11,6 +11,15 @@ console.log(palindrome(string2));
 
 //
 
-function fnPalindrome(str) {}
+function fnPalindrome(str) {
+  let len = str.length;
+  for (let i = 0; i < len; i++) {
+    if (str[i] !== str[len - 1]) {
+      return false;
+    }
+    len--;
+  }
+  return true;
+}
 
-fnPalindrome(string1);
+console.log(fnPalindrome(string2));
